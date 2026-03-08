@@ -45,7 +45,9 @@ namespace CollectionsMasterConsoleUI
             Array.Reverse(numbers);
 
             Console.WriteLine("---------REVERSE CUSTOM------------");
-             
+            var customArray = (int[])numbers.Clone();
+            ReverseArray(customArray);
+            NumberPrinter(customArray);
 
             Console.WriteLine("-------------------");
 
@@ -164,6 +166,7 @@ namespace CollectionsMasterConsoleUI
             {
                 Console.WriteLine("sorry do not have that number");
             }
+            
         }
 
         private static void Populater(List<int> numberList)
@@ -194,8 +197,8 @@ namespace CollectionsMasterConsoleUI
             int end = array.Length - 1;
 
             while (start < end)
-            {
-                int temp = array[start];
+            { 
+                int temp = array[start]; 
                 array[start] = array[end];
                 array[end] = temp;
                 
